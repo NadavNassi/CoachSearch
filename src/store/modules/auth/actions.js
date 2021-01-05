@@ -1,7 +1,9 @@
+import example from '../../../../example.json'
+
 export default {
   async login(context, payload) {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCDqfZNR0YbZs6GtuD3euc638vj8uRLL9w',
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${example.keys.googleKey}`,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -26,7 +28,7 @@ export default {
   },
   async signup(context, payload) {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCDqfZNR0YbZs6GtuD3euc638vj8uRLL9w',
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${example.keys.googleKey}`,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -49,11 +51,11 @@ export default {
       tokenExpiration: responseData.expiresIn
     });
   },
-  async logout(context){
+  async logout(context) {
     await context.commit('setUser', {
       token: null,
       userId: null,
       tokenExpiration: null
-    })
+    });
   }
 };
