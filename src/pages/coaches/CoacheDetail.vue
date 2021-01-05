@@ -3,7 +3,7 @@
     <section>
       <base-card>
         <h2>{{ fullName }}</h2>
-        <h3>{{ rate }}</h3>
+        <h3>${{ rate }}/hour</h3>
       </base-card>
     </section>
     <section>

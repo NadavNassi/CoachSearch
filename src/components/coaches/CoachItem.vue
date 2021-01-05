@@ -10,7 +10,7 @@
     </div>
     <div class="actions">
       <base-button mode="outline" link :to="coachContactLink">Contact</base-button>
-      <base-button mode="outline" link :to="coachProfileLink">View Profile</base-button>
+      <base-button link :to="coachProfileLink">View Profile</base-button>
     </div>
   </li>
 </template>

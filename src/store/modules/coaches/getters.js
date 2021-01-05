@@ -8,15 +8,7 @@ export default {
   isCoach(_state, getters, _rootState, rootGetters) {
     const coaches = getters.coaches;
     const userId = rootGetters.userId;
-    if (
-      coaches.some(coach => {
-        coach.id === userId;
-      })
-    ) {
-      return false;
-    } else {
-      return true;
-    }
+    return coaches.some(coach => coach.id === userId);
   },
   shouldUpdate(state) {
     const lastFetch = state.lastFetch;
